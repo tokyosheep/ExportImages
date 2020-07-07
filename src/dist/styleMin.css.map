@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///../styles/style.scss"],"names":[],"mappings":"AAAA;EACI,YAAY;EACZ,mBAA2B","file":"dist/styleMin.css","sourcesContent":["body{\n    color: white;\n    background: rgb(88, 88, 88);\n}"],"sourceRoot":""}

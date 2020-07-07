@@ -88,10 +88,11 @@ function export_document(obj){
                 filenum++ 
             }   
         }
+        var name;
         if(obj.saves.another){
-            var name = chr+"+"+filenum;  
+             name = chr+"+"+filenum;  
             }else{
-                var name =  chr;    
+                name =  chr;    
             }
 
         this.fPath = fPath;

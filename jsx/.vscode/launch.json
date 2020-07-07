@@ -8,7 +8,7 @@
             "type": "extendscript-debug",
             "request": "launch",
             "name": "exportimages",
-            "program": "${workspaceFolder}/exportImages.jsx",
+            "program": "${workspaceFolder}/hostScript.jsx",
             "stopOnEntry": false
         }
     ]
