@@ -9,7 +9,8 @@ var GetFolderPath = function(moreOptions,folder){
 GetFolderPath.prototype.getpath = function(){
     //---------------別名保存用のパス------------------
     //====拡張子抜き出し=====
-
+    $.writeln(this.folder);
+    $.writeln("this.folder");
    var fPath = this.export ? this.folder : activeDocument.path;
    
    var fname = activeDocument.name//ドキュメントの名前を読み込み

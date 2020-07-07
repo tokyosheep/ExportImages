@@ -14,9 +14,9 @@ function decodeStr(str){
 #include "getAllFIles.jsx";
 #include "saveFunc.jsx";
 var obj = {"extensions":{"jpg":false,"psd":false,"tiff":true,"png":false,"gif":false,"eps":false},
-"options":{"isResize":false,"size":1000,"resolution":72,"quality":12,"allOpened":true,"mergeLay":false,"saveTrans":false,"convertsRGB":false},"moreOptions":{"asAnotherFile":false,"eachFolder":false,"export":false},"moreOptionsExt":{"jpg":false,"psd":false,"tiff":false,"png":false,"gif":false,"eps":false},
-"folder":""}
-PSfunc(obj);
+"options":{"isResize":false,"size":1000,"resolution":72,"quality":12,"allOpened":true,"mergeLay":false,"saveTrans":false,"convertsRGB":false},"moreOptions":{"asAnotherFile":false,"eachFolder":false,"export":true},"moreOptionsExt":{"jpg":true,"psd":false,"tiff":false,"png":false,"gif":false,"eps":false},
+"folder":"~/Desktop/export"}
+PSfunc({prop:obj,func:"saveProcess"});
 */
 function AIFunc(obj){
     switch(obj.func){
@@ -98,6 +98,7 @@ function PSfunc(obj){
         if(this.isResize){
             this.resize();
         }
+        $.writeln(this.arg.folder);
         var process = new Main_process(this.arg.op,this.arg.more,this.arg.ext,this.arg.moreExt,this.arg.folder);
         var flag = process.saveFiles();
         return true;
@@ -124,7 +125,7 @@ function PSfunc(obj){
             alert("please you check folder path");
             return false;
         }
-        var pc = new OptionProcess(obj.options,obj.moreOptions,obj.extensions,obj.folder);
+        var pc = new OptionProcess(obj.options,obj.moreOptions,obj.extensions,obj.moreOptionsExt,obj.folder);
         pc.onFiles();
         return true;
     }
