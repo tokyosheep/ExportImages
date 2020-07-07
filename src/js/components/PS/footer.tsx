@@ -24,7 +24,7 @@ const FooterMainButton = (prop) =>{
         const send = new SendHostScript("PSfunc");
         await bs.writeFile(extensionRoot+"data.json",prop.state.PSReducer);
         console.log(prop.state.PSReducer);
-        const flag = await send.callHostScript(prop.state.PSReducer);
+        const flag = await send.callHostScript({prop:prop.state.PSReducer,func:"saveProcess"});
         console.log(flag);
     }
     return(
