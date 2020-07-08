@@ -17,7 +17,7 @@ const LayoutAI = (prop) =>{
         })();
     },[]);
     return(
-        <div className="container">
+        <div className="container-AI">
             <HeaderMainButtons />
             <AsideMenu />
             <AIMain />

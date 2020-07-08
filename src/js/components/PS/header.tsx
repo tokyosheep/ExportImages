@@ -22,7 +22,7 @@ const Header = (prop/*:{state:{PSReducer:InitPS}}*/) =>{
         boxes.push(<li key={key}><ExtCheckBox name={key} value={prop} arg={{key:key}} func={handleCheckBox}/></li>);
     });
     return(
-        <header className="header">
+        <header className="PSheader">
             <h1 className="header-large">export image</h1>
             <ul>
                 {boxes}

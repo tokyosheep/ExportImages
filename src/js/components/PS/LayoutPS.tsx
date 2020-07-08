@@ -5,6 +5,9 @@ import Header from "./header";
 import MainOptions from "./main";
 import AsideOptions from "./asideOptions";
 import FooterMainButton from "./footer";
+import CompactMode from "./compactMode/compactMain";
+import PresetMode from "./presetMode/presetMode";
+
 import Prests from "./Presets";
 import {PSReceive} from "../../connection/PScommunicate";
 
@@ -15,7 +18,7 @@ const LayoutPS = ():React.ReactElement =>{
         })();
     },[])
     return(
-        <div className="container">
+        <div className="container-PS">
             <Header />
             <MainOptions />
             <AsideOptions />

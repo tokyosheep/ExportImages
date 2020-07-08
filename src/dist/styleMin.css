@@ -1,6 +1,30 @@
 body {
   color: white;
-  background: #585858; }
+  background: #030214; }
+
+ul {
+  list-style: none; }
+
+.container-PS {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 300px;
+  grid-template-columns: 1fr 300px;
+  -ms-grid-rows: 200px 1fr 200px;
+  grid-template-rows: 200px 1fr 200px;
+  grid-area: "ps-header aside-options" "ps-main aside-options" "main-buttons aside-options"; }
+
+.PSheader {
+  grid-area: ps-header; }
+
+.PSmain {
+  grid-area: ps-main; }
+
+.asideOptions {
+  grid-area: aside-options; }
+
+.mainButtonForm {
+  grid-area: main-buttons; }
 
 
 /*# sourceMappingURL=styleMin.css.map*/
