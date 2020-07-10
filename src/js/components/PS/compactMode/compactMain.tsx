@@ -5,6 +5,8 @@ import {mapStateToProps} from "../../../redux/actions/mapStateProps";
 import {mapDispatchProps} from "../../../redux/actions/mapDispatchProps";
 
 import {InitPS} from "../../../redux/reducer/type";
+import JsxButton from "../JsxButton";
+import SwitchModeButton from "../switchMode";
 
 const CompactMode = (prop:{state:{PSReducer:InitPS}}) =>{
     const [state,setState]:[InitPS,(v:InitPS)=>void] = useState(prop.state.PSReducer);
@@ -12,23 +14,31 @@ const CompactMode = (prop:{state:{PSReducer:InitPS}}) =>{
     const isImport = state.moreOptions.export;
     const extList = [];
     Object.entries(isImport ? state.moreOptionsExt : state.extensions).forEach(([key,value])=>{
-        extList.push(<li key={key} className={ value ? "ext_on" : "ext_off"}>{value}</li>);
+        extList.push(<li key={key} className={ value ? "checkedOn" : "checkedOff"}>{key}</li>);
     });
     const options = [];
     Object.entries(state.options).forEach(([key,value])=>{
-        options.push(<li key={key}>{key} :{value}</li>);
+        options.push(<li key={key} className={ value ? "checkedOn" : "checkedOff"}>{key}{typeof value === "number" ? " :"+ value : ""}</li>);
     });
     const moreOptions = [];
     Object.entries(state.moreOptions).forEach(([key,value])=>{
-        moreOptions.push(<li key={key}>{key} :{value}</li>)
+        moreOptions.push(<li key={key} className={ value ? "checkedOn" : "checkedOff"}>{key}</li>)
     })
     return(
         <div className="compactMode">
             <h3 className="head-small">extensions</h3>
-            <ul>{extList}</ul>
+            <ul className="compactMode__list">{extList}</ul>
             <h3 className="head-small">options</h3>
-            <ul>{options}</ul>
-            <ul>{moreOptions}</ul>
+            <ul className="compactMode__list">{options}</ul>
+            <ul className="compactMode__list">{moreOptions}</ul>
+            <ul className="compactMode__buttons">
+                <li>
+                    <JsxButton />
+                </li>
+                <li>
+                    <SwitchModeButton />
+                </li>
+            </ul>
         </div>
     )
 }

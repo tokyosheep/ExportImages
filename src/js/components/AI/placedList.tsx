@@ -34,7 +34,7 @@ const PlacedList = (prop) =>{
         return(
             <li key={docIndex}>
                 <p>{doc.name}</p>
-                <ul>
+                <ul className="PlacedList__images__documents">
                     {placedList}
                 </ul>
             </li>
@@ -42,7 +42,7 @@ const PlacedList = (prop) =>{
     })
     return(
         <div className="PlacedList">
-            <ul>
+            <ul className="PlacedList__images">
                 {documentImages}
             </ul>
         </div>

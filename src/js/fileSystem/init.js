@@ -17,4 +17,13 @@ const init = () =>{
     }
 }
 
-export {csInterface,extensionRoot,filePath,extensionId,extFolder,appID,Vulcan,VulcanInt,init};
+const reloadEvent = () =>{
+    const csInterface = new CSInterface();
+    csInterface.addEventListener("com.adobe.csxs.events.WindowVisibilityChanged",()=>{location.reload(true)},false);
+}
+
+const resizeWindow = (width,height) =>{
+    csInterface.resizeContent(width,height);
+}
+
+export {csInterface,extensionRoot,filePath,extensionId,extFolder,appID,Vulcan,VulcanInt,init,reloadEvent,resizeWindow};

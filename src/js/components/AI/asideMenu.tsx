@@ -16,8 +16,14 @@ const AsideMenu = (prop) =>{
     }
     return(
         <aside className="asideMenuAI">
-            <StdButton name="all on" func={allCheck} arg={{flag:true}}/>
-            <StdButton name="all off" func={allCheck} arg={{flag:false}}/>
+            <ul className="asideMenuAI__buttons">
+                <li>
+                    <StdButton name="all on" func={allCheck} arg={{flag:true}}/>
+                </li>
+                <li>
+                    <StdButton name="all off" func={allCheck} arg={{flag:false}}/>
+                </li>
+            </ul>
         </aside>
     )
 }

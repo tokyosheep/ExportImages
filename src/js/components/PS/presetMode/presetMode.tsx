@@ -7,6 +7,7 @@ import {mapDispatchProps} from "../../../redux/actions/mapDispatchProps";
 import {readJSON} from "../../../fileSystem/presetSystem";
 import {InitPS} from "../../../redux/reducer/type";
 import {Extension,Options,MoreOptions} from "../../../redux/reducer/type";
+import SwitchModeButton from "../switchMode";
 type PropType = InitPS & {name:string};
 type Properties = Extension | Options | MoreOptions;
 
@@ -25,13 +26,13 @@ const DataProperty = (prop:PropType) =>{
     return(
         <div className="jsonProp">
             <h3 className="head-small">{prop.name}</h3>
-            <ul>
+            <ul className="jsonProp__exts">
                 {exts}
             </ul>
-            <ul>
+            <ul className="jsonProp__options">
                 {options}
             </ul>
-            <ul>
+            <ul className="jsonProp__moreOptions">
                 {moreOptions}
             </ul>
         </div>
@@ -52,6 +53,7 @@ const PresetMode = () =>{
             <ul className="jsonList">
                 {JsonList}
             </ul>
+            <SwitchModeButton />
         </div>
     )
 }

@@ -4,8 +4,16 @@ import {connect} from "react-redux";
 import {mapStateToProps} from "../../redux/actions/mapStateProps";
 import {mapDispatchProps} from "../../redux/actions/mapDispatchProps";
 import {ExtCheckBox} from "../parts/checkBox";
-
 import {InitPS,Extension} from "../../redux/reducer/type";
+
+
+const borderHead = {
+    background:"linear-gradient(45deg,rgb(6, 16, 33),rgb(0, 20, 255),rgb(6, 16, 33))",
+    width:"300px",
+    height:"3px",
+    display:"block"
+}
+
 const Header = (prop/*:{state:{PSReducer:InitPS}}*/) =>{
     console.log(prop);
     const [exts,setExt]:[Extension,(Extension:Extension)=>void] = useState(prop.state.PSReducer.extensions);
@@ -24,7 +32,8 @@ const Header = (prop/*:{state:{PSReducer:InitPS}}*/) =>{
     return(
         <header className="PSheader">
             <h1 className="header-large">export image</h1>
-            <ul>
+            <div style={borderHead}></div>
+            <ul className="PSheader__exts">
                 {boxes}
             </ul>
         </header>

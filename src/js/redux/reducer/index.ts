@@ -75,8 +75,16 @@ const initMode = "normal";
 export const PSModeReduce = (state = initMode,action:MODEAction) =>{
     switch(action.type){
         case "SETMODE":
-            const mode = action.arg.mode;
-            return mode;
+            switch(action.arg.mode){
+                case "normal":
+                    return "compact";
+                case "compact":
+                    return "preset";
+                case "preset":
+                    return "normal";
+                default:
+                    return action.arg.mode;
+            }
 
         default:
             return state;

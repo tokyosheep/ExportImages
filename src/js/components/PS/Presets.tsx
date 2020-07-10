@@ -18,7 +18,7 @@ const JSONPath = extFolder + "/preset.json";
 const Prests = (prop) =>{
     const [selectList,setSelectList]:[InitPS[],(array:InitPS[])=>void] = useState([]);
     const [selected,setSeleted]:[string,(v:string)=>void] = useState("");
-    const [text,setText]:[string,(v:string)=>void] = useState("");
+    const [text,setText]:[string,(v:string)=>void] = useState("presetName");
     useEffect(()=>{
         (async()=>{
             const JsonData = await readJSON();
@@ -73,17 +73,15 @@ const Prests = (prop) =>{
     return(
         <div className="presets">
             <h3 className="head-small">presets</h3>
+            <PrestSelectForm jsonList={selectList} selected={selected} func={setValue}/>
+            <StdTextBox name="pereset name" value={text} func={handleTextBox} />
             <ul className="presetsForm">
-                <li>
-                    <PrestSelectForm jsonList={selectList} selected={selected} func={setValue}/>
-                </li>
                 <li>
                     <StdButton name="apply" func={applyJson} />
                 </li>
                 <li>
                     <StdButton name="delete" func={deleteJson}/>
                 </li>
-                    <StdTextBox name="pereset name" value={text} func={handleTextBox} />
                 <li>
                     <StdButton name="add preset" func={writeJson}/>
                 </li>

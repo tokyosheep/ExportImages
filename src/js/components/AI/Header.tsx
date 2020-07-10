@@ -37,11 +37,17 @@ const HeaderMainButtons = (prop) =>{
     return(
         <header className="AIheader">
             <h1 className="head-large">export images</h1>
-            <div className="AIheader__mainButtons">
-                <StdButton name="get replaced images" func={handleGetPlaced}/>
-                <StdButton name="replace Images" func={handleReplaceImages}/>
-                <StdButton name="send to Photoshop" func={sendPlacesPhotoshop}/>
-            </div>
+            <ul className="AIheader__mainButtons">
+                <li>
+                    <StdButton name="get replaced images" func={handleGetPlaced}/>
+                </li>
+                <li>
+                    <StdButton name="replace Images" func={handleReplaceImages}/>
+                </li>
+                <li>
+                    <StdButton name="send to Photoshop" func={sendPlacesPhotoshop}/>
+                </li>
+            </ul>
         </header>
     )
 }

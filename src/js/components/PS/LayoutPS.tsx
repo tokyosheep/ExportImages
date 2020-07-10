@@ -1,6 +1,9 @@
 import * as React from "react";
-import {useMemo} from "react";
-import {StdButton} from "../parts/button";
+import {connect} from "react-redux";
+import {mapStateToProps} from "../../redux/actions/mapStateProps";
+import {mapDispatchProps} from "../../redux/actions/mapDispatchProps";
+import {useMemo,useState} from "react";
+
 import Header from "./header";
 import MainOptions from "./main";
 import AsideOptions from "./asideOptions";
@@ -10,8 +13,39 @@ import PresetMode from "./presetMode/presetMode";
 
 import Prests from "./Presets";
 import {PSReceive} from "../../connection/PScommunicate";
+import {resizeWindow} from "../../fileSystem/init.js";
+const LayoutPS = (prop):React.ReactElement =>{
+    const [mode,setMode]:[string,(v:string)=>void] = useState(prop.state.PSModeReduce);
+    useMemo(()=>setMode(prop.state.PSModeReduce),[prop.state.PSModeReduce]);
+    let htmlElemnts:React.ReactElement;
+    switch(mode){
+        case "normal":
+            htmlElemnts = (
+                <>
+                    <Header />
+                    <MainOptions />
+                    <AsideOptions />
+                    <Prests />
+                    <FooterMainButton />
+                </>
+            );
+            resizeWindow(700,600);
+        break;
 
-const LayoutPS = ():React.ReactElement =>{
+        case "compact":
+            htmlElemnts = (
+                <CompactMode />
+            );
+            resizeWindow(300,300);
+        break;
+
+        case "preset":
+            htmlElemnts = (
+                <PresetMode />
+            );
+            resizeWindow(700,500);
+        break; 
+    }
     useMemo(()=> {
         (async()=>{
             await PSReceive();
@@ -19,13 +53,9 @@ const LayoutPS = ():React.ReactElement =>{
     },[])
     return(
         <div className="container-PS">
-            <Header />
-            <MainOptions />
-            <AsideOptions />
-            <Prests />
-            <FooterMainButton />
+            {htmlElemnts}
         </div>
     )
 }
 
-export default LayoutPS;
+export default connect(mapStateToProps,mapDispatchProps)(LayoutPS);

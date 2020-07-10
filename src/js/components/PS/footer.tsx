@@ -5,10 +5,9 @@ import {mapDispatchProps} from "../../redux/actions/mapDispatchProps";
 
 import {LargeButton} from "../parts/button";
 import {sendFromPS} from "../../connection/PScommunicate";
-import {getPhotoshopImages,validateProp} from "../../fileSystem/getPhotoshopImg";
-import {SendHostScript} from "../../fileSystem/connectHostJsx";
-import {extensionRoot} from "../../fileSystem/init.js";
-import bs from "../../fileSystem/basicSystem";
+import {getPhotoshopImages} from "../../fileSystem/getPhotoshopImg";
+import JsxButton from "./JsxButton";
+import SwitchModeButton from "./switchMode";
 const FooterMainButton = (prop) =>{
     const sendToIllustrator = async() =>{
         const images = await getPhotoshopImages();
@@ -19,14 +18,7 @@ const FooterMainButton = (prop) =>{
         const send = sendFromPS();
         send.sendMsg(images);
     }
-    const JSXprocess = async() =>{
-        if(!validateProp(prop.state.PSReducer))return;
-        const send = new SendHostScript("PSfunc");
-        await bs.writeFile(extensionRoot+"data.json",prop.state.PSReducer);
-        console.log(prop.state.PSReducer);
-        const flag = await send.callHostScript({prop:prop.state.PSReducer,func:"saveProcess"});
-        console.log(flag);
-    }
+    
     return(
         <footer className="footer mainButtonForm">
             <ul>
@@ -34,7 +26,10 @@ const FooterMainButton = (prop) =>{
                     <LargeButton name="send to Illustrator images" func={sendToIllustrator}/>
                 </li>
                 <li>
-                    <LargeButton name="done" func={JSXprocess}/>
+                    <JsxButton />
+                </li>
+                <li>
+                    <SwitchModeButton />
                 </li>
             </ul>
         </footer>
