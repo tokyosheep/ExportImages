@@ -10,7 +10,7 @@
   margin-top: 10px;
   text-align: center;
   cursor: pointer;
-  transition: ease 1s; }
+  transition: ease 0.5s; }
 
 .ExtCheckbox .ExtCheckbox__display {
   background: rgba(87, 204, 149, 0); }
@@ -34,7 +34,7 @@
   margin-top: 10px;
   text-align: center;
   cursor: pointer;
-  transition: ease 1s; }
+  transition: ease 0.5s; }
 
 .StdCheckbox .StdCheckbox__display {
   background: rgba(255, 255, 255, 0); }
@@ -235,6 +235,39 @@ ul {
   background: rgba(255, 255, 255, 0.3); }
 
 /* presets */
+.presetContainer .jsonProp .jsonProp__exts {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 0; }
+  .presetContainer .jsonProp .jsonProp__exts li {
+    border: 1px solid #fff;
+    margin-right: 10px;
+    margin-top: 5px;
+    padding: 5px; }
+
+.presetContainer .jsonProp .jsonProp__options {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 0; }
+  .presetContainer .jsonProp .jsonProp__options li {
+    border: 1px solid #fff;
+    margin-right: 10px;
+    margin-top: 5px;
+    padding: 5px; }
+
+.presetContainer .jsonProp .jsonProp__moreOptions {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 0; }
+  .presetContainer .jsonProp .jsonProp__moreOptions li {
+    border: 1px solid #fff;
+    margin-right: 10px;
+    margin-top: 5px;
+    padding: 5px; }
+
 /* illustraotr */
 .container-AI {
   display: -ms-grid;

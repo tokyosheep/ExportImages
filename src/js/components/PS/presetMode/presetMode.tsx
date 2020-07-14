@@ -14,7 +14,7 @@ type Properties = Extension | Options | MoreOptions;
 const ListElements = (obj:Properties) =>{
     const array = [];
     Object.entries(obj).forEach(([key,value])=>{
-        array.push(<li key={key}>{key} :{value}</li>)
+        array.push(<li key={key} className={value === true ? "checkedOn" : "checkedOff"}>{key} {typeof value === "number" ? " :" + value: ""}</li>)
     });
     return array;
 }
@@ -35,6 +35,7 @@ const DataProperty = (prop:PropType) =>{
             <ul className="jsonProp__moreOptions">
                 {moreOptions}
             </ul>
+            <p>folder path :{prop.folder}</p>
         </div>
     )
 }
