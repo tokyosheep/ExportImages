@@ -105,18 +105,24 @@ ul{
 /* presets */
 @mixin presetList(){
     @include flexList();
+    li{
+        border: 1px solid #fff;
+        margin-right: 10px;
+        margin-top: 5px;
+        padding: 5px;
+    }
 }
 
 .presetContainer{
     .jsonProp{
         .jsonProp__exts{
-
+            @include presetList();
         }
         .jsonProp__options{
-
+            @include presetList();
         }
         .jsonProp__moreOptions{
-
+            @include presetList();
         }
     }
 }

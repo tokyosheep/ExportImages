@@ -41,7 +41,7 @@ const MainOptions = (prop):React.ReactElement =>{
                     <StdNumberBox name="resolution" disabled={disabled} value={options.resolution} func={handleNumberBox} max={1000} min={1} arg={{key:"resolution"}}/>
                 </li>
                 <li>
-                    <StdNumberBox name="quality(jpg)" disabled={disabled} value={options.quality} func={handleNumberBox} max={12} min={1} arg={{key:"quality"}}/>
+                    <StdNumberBox name="quality(jpg)" value={options.quality} func={handleNumberBox} max={12} min={1} arg={{key:"quality"}}/>
                 </li>
             </ul>
             <ul className="PSmain__otherOptions">

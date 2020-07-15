@@ -18,6 +18,7 @@ const LayoutPS = (prop):React.ReactElement =>{
     const [mode,setMode]:[string,(v:string)=>void] = useState(prop.state.PSModeReduce);
     useMemo(()=>setMode(prop.state.PSModeReduce),[prop.state.PSModeReduce]);
     let htmlElemnts:React.ReactElement;
+    window.scrollTo(0,0);
     switch(mode){
         case "normal":
             htmlElemnts = (
@@ -29,14 +30,14 @@ const LayoutPS = (prop):React.ReactElement =>{
                     <FooterMainButton />
                 </>
             );
-            resizeWindow(700,600);
+            resizeWindow(1000,600);
         break;
 
         case "compact":
             htmlElemnts = (
                 <CompactMode />
             );
-            resizeWindow(300,300);
+            resizeWindow(350,350);
         break;
 
         case "preset":
