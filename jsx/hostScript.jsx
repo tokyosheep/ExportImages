@@ -23,14 +23,28 @@ function AIFunc(obj){
         case "shiftImages":
             shiftImages(obj.AIImages,obj.PSImage);
             break;
+
+        case "replaceSlected":
+            replaceSlected(obj.image);
+            break;
         
         default: 
             break;
     }
     return true;
 
+    function replaceSlected(image){
+        var placedItems = activeDocument.placedItems;
+        var selects = [];
+        for(var j=0;j<placedItems.length;j++){
+            if(placedItems[j].selected)selects.push(placedItems[j])
+        }
+        for(var l=0;l<selects.length;l++){
+            selects[l].file = new File(image);
+        }
+    }
+
     function shiftImages(docmentsData,PSImage){
-        $.writeln(PSImage.path);
         for(var i=0;i<docmentsData.length;i++){
             try{
                 app.activeDocument = app.documents[docmentsData[i].name];
@@ -52,7 +66,6 @@ function AIFunc(obj){
             try{
                 if(docData.placed[l].path === decodeStr(placedItem.file)&&parseFloat(docData.placed[l].index) === index){
                     placedItem.file = new File(replace);
-                    $.writeln(true);
                     return true;
                 } 
             }catch(e){

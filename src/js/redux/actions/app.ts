@@ -15,6 +15,15 @@ export const SetValue ={
     }
 }
 
+export const SetLoad ={
+    setOn:()=>{
+        return{type:"on"}
+    },
+    setOff:()=>{
+        return{type:"off"}
+    }
+}
+
 export const SetList ={
     setList:({list})=>{
         return {type:"SETLIST",arg:{list}};

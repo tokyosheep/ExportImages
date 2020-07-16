@@ -1,8 +1,10 @@
-import {SetValue,SetList,GetPlaced,SetChecked} from "./app";
+import {SetValue,SetList,GetPlaced,SetChecked,SetLoad} from "./app";
 
 
 export const mapDispatchProps = dispatch =>{
     return{
+        set_On:()=>dispatch(SetLoad.setOn()),
+        set_Off:()=>dispatch(SetLoad.setOff()),
         set_Prop:(obj,prop,value)=>dispatch(SetValue.setValue({obj,prop,value})),
         set_Json:(json)=>dispatch(SetValue.setJson({json})),
         set_Folder:(folder)=>dispatch(SetValue.setFolder({folder})),
