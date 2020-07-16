@@ -16,7 +16,7 @@
             <Host Name="PHSP" Version="[16.0,99.9]" />
             
             <!-- Illustrator -->
-            <!-- <Host Name="ILST" Version="[18.0,99.9]" /> -->
+            <Host Name="ILST" Version="[18.0,99.9]" />
             
             <!-- InDesign -->
             <!-- <Host Name="IDSN" Version="[10.0,99.9]" /> -->
@@ -55,7 +55,7 @@
 			<DispatchInfo >
 				<Resources>
 				<MainPath>./index.html</MainPath>
-				<ScriptPath>./jsx/exportImages.jsx</ScriptPath>
+				<ScriptPath>./jsx/hostScript.jsx</ScriptPath>
                     <CEFCommandLine>   
                         <Parameter>--enable-nodejs</Parameter>  
                         <Parameter>--mixed-context</Parameter>  

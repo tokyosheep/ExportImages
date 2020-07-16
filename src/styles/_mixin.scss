@@ -1,0 +1,6 @@
+@mixin flexList($justyfy:flex-start){
+    display: flex;
+    justify-content: $justyfy;   
+    flex-wrap: wrap;
+    padding: 0; 
+}

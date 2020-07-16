@@ -1,0 +1,185 @@
+@import "./mixin";
+@import "./formDeisgn";
+body{
+    color: white;
+    background: rgb(3, 2, 20);
+}
+
+ul{
+    list-style: none;
+}
+
+.container-PS{
+    display: grid;
+    grid-template-columns: 700px 300px;
+    grid-template-rows: 150px 1fr 200px 200px;
+    grid-template-areas: 
+        "ps-header aside-options"
+        "ps-main aside-options"
+        "presets aside-options"
+        "main-buttons aside-options"
+    ;
+}
+
+.PSheader{
+    grid-area: ps-header;
+    .PSheader__exts{
+        @include flexList();
+    }
+}
+
+.PSmain{
+    grid-area: ps-main;
+    .PSmain__resizeForm{
+        @include flexList();
+    }
+    .PSmain__otherOptions{
+        @include flexList();
+    }
+}
+
+.asideOptions{
+    grid-area: aside-options;
+    .asideOptions__basic{
+        .asideOptions__basic__List{
+            @include flexList();
+        }
+    }
+    .asideOptions__extensions{
+        .saveOptions__extensions__list{
+            @include flexList();
+        }
+    }
+}
+
+.presets{
+    grid-area: presets;
+    .presetsForm{
+        @include flexList();
+        li{
+            margin-right: 10px;
+        }
+    }
+}
+
+.mainButtonForm{
+    grid-area: main-buttons;
+    ul{
+        @include flexList();
+        li{
+            margin-right: 10px;
+        }
+    }
+}
+
+/* compact */
+
+.compactMode{
+    width: 400px;
+    .compactMode__list{
+        @include flexList();
+        li{
+            border: 1px solid #fff;
+            padding: 3px;
+            margin-right: 4px;
+            margin-top: 5px;
+        }
+    }
+}
+
+.compactMode__buttons{
+    @include flexList();
+    li{
+        margin-right: 10px;
+    }
+}
+
+.checkedOff{
+    background: rgba(255,255,255,0);
+}
+
+.checkedOn{
+    background: rgba(255,255,255,0.3);
+}
+
+/* presets */
+@mixin presetList(){
+    @include flexList();
+    li{
+        border: 1px solid #fff;
+        margin-right: 10px;
+        margin-top: 5px;
+        padding: 5px;
+    }
+}
+
+.presetContainer{
+    .jsonProp{
+        .jsonProp__exts{
+            @include presetList();
+        }
+        .jsonProp__options{
+            @include presetList();
+        }
+        .jsonProp__moreOptions{
+            @include presetList();
+        }
+    }
+}
+
+/* illustraotr */
+
+.container-AI{
+    display: grid;
+    grid-template-areas: 
+    "aiHead"
+    "AiMain"
+    "asideAi"
+    "placeList"
+    ;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 1fr 100px 2fr;
+}
+
+.AIheader{
+    grid-area: aiHead;
+    .AIheader__mainButtons{
+        @include flexList();
+        li{
+            margin-right: 10px;
+        }
+    }
+}
+
+.AIMain{
+    grid-area: AiMain;
+    .PSimageList{
+        @include flexList();
+    }
+}
+
+.asideMenuAI{
+    grid-area: asideAi;
+    .asideMenuAI__buttons{
+        @include flexList();
+        li{
+            margin-right: 10px;
+        }
+    }
+}
+
+.PlacedList{
+    grid-area: placeList;
+    .PlacedList__images{
+        @include flexList();
+        background: rgb(48, 85, 133);
+        padding: 10px;
+        .PlacedList__images__documents{
+            padding: 10px;
+            background: rgb(24, 39, 59);
+            box-shadow: 5px 5px 4px rgba(40, 48, 56, 0.6);
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+    }
+}

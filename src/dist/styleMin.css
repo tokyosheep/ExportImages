@@ -1,0 +1,333 @@
+.ExtCheckbox .ExtCheckbox__input {
+  display: none; }
+
+.ExtCheckbox .ExtCheckbox__display {
+  width: 50px;
+  height: 20px;
+  border: 1px solid #5dfc94;
+  border-radius: 8px;
+  margin-right: 10px;
+  margin-top: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: ease 0.5s; }
+
+.ExtCheckbox .ExtCheckbox__display {
+  background: rgba(87, 204, 149, 0); }
+
+.ExtCheckbox .ExtCheckbox__input:checked + .ExtCheckbox__display {
+  background: rgba(87, 204, 149, 0.3); }
+
+.ExtCheckbox .ExtCheckbox__input:disabled + .ExtCheckbox__display {
+  border: 1px solid #379658;
+  color: #575757; }
+
+.StdCheckbox {
+  font-size: 12px; }
+  .StdCheckbox .StdCheckbox__input {
+    display: none; }
+  .StdCheckbox .StdCheckbox__display {
+    width: 130px;
+    height: 20px;
+    padding: 5px 10px;
+    border: 1px solid #fff;
+    margin-right: 10px;
+    margin-top: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: ease 0.5s; }
+  .StdCheckbox .StdCheckbox__display {
+    background: rgba(255, 255, 255, 0); }
+  .StdCheckbox .StdCheckbox__input:checked + .StdCheckbox__display {
+    background: rgba(255, 255, 255, 0.3); }
+
+.stdText {
+  width: 130px;
+  height: 20px; }
+  .stdText p {
+    margin: 0; }
+  .stdText .stdText__input {
+    background: #000;
+    border: none;
+    color: white;
+    border-bottom: 1px solid #fff; }
+    .stdText .stdText__input:disabled {
+      color: #888; }
+
+.stdNumber {
+  width: 130px;
+  margin-right: 10px;
+  display: block; }
+  .stdNumber p {
+    margin: 0; }
+  .stdNumber .stdNumber__input {
+    background: #000;
+    border: none;
+    color: white;
+    border-bottom: 1px solid #fff; }
+    .stdNumber .stdNumber__input:disabled {
+      color: #888; }
+
+.stdButton {
+  width: 130px;
+  height: 20px;
+  background: linear-gradient(#0014ff, rgba(0, 20, 255, 0));
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 10px; }
+  .stdButton:active {
+    background: linear-gradient(#061085, rgba(0, 20, 255, 0)); }
+
+.largeButton {
+  width: 150px;
+  height: 30px;
+  color: white;
+  background: #1c2a69;
+  box-shadow: 5px 5px 3px rgba(70, 70, 130, 0.3);
+  border: none;
+  cursor: pointer; }
+  .largeButton:active {
+    background: #10173a; }
+
+.selector__select {
+  background: rgba(0, 60, 120, 0.8);
+  color: white;
+  border: none;
+  padding: 3px 20px;
+  height: 25px;
+  width: 200px;
+  border-radius: 0px; }
+  .selector__select option {
+    background: rgba(20, 40, 80, 0.3); }
+
+.stdRadio {
+  padding: 5px;
+  border: 1px solid #fff;
+  display: block;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-right: 5px;
+  cursor: pointer; }
+
+.FileCheckbox {
+  padding: 5px;
+  border: 1px solid #999;
+  display: block;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-right: 5px;
+  cursor: pointer; }
+  .FileCheckbox .FileCheckbox__input {
+    display: inline; }
+  .FileCheckbox .FileCheckbox__display {
+    display: inline; }
+
+body {
+  color: white;
+  background: #030214; }
+
+ul {
+  list-style: none; }
+
+.container-PS {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 700px 300px;
+  grid-template-columns: 700px 300px;
+  -ms-grid-rows: 150px 1fr 200px 200px;
+  grid-template-rows: 150px 1fr 200px 200px;
+      grid-template-areas: "ps-header aside-options" "ps-main aside-options" "presets aside-options" "main-buttons aside-options"; }
+
+.PSheader {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: ps-header; }
+  .PSheader .PSheader__exts {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 0; }
+
+.PSmain {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: ps-main; }
+  .PSmain .PSmain__resizeForm {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 0; }
+  .PSmain .PSmain__otherOptions {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 0; }
+
+.asideOptions {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 4;
+  -ms-grid-column: 2;
+  grid-area: aside-options; }
+  .asideOptions .asideOptions__basic .asideOptions__basic__List {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 0; }
+  .asideOptions .asideOptions__extensions .saveOptions__extensions__list {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 0; }
+
+.presets {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: presets; }
+  .presets .presetsForm {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 0; }
+    .presets .presetsForm li {
+      margin-right: 10px; }
+
+.mainButtonForm {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: main-buttons; }
+  .mainButtonForm ul {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 0; }
+    .mainButtonForm ul li {
+      margin-right: 10px; }
+
+/* compact */
+.compactMode {
+  width: 400px; }
+  .compactMode .compactMode__list {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 0; }
+    .compactMode .compactMode__list li {
+      border: 1px solid #fff;
+      padding: 3px;
+      margin-right: 4px;
+      margin-top: 5px; }
+
+.compactMode__buttons {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 0; }
+  .compactMode__buttons li {
+    margin-right: 10px; }
+
+.checkedOff {
+  background: rgba(255, 255, 255, 0); }
+
+.checkedOn {
+  background: rgba(255, 255, 255, 0.3); }
+
+/* presets */
+.presetContainer .jsonProp .jsonProp__exts {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 0; }
+  .presetContainer .jsonProp .jsonProp__exts li {
+    border: 1px solid #fff;
+    margin-right: 10px;
+    margin-top: 5px;
+    padding: 5px; }
+
+.presetContainer .jsonProp .jsonProp__options {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 0; }
+  .presetContainer .jsonProp .jsonProp__options li {
+    border: 1px solid #fff;
+    margin-right: 10px;
+    margin-top: 5px;
+    padding: 5px; }
+
+.presetContainer .jsonProp .jsonProp__moreOptions {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 0; }
+  .presetContainer .jsonProp .jsonProp__moreOptions li {
+    border: 1px solid #fff;
+    margin-right: 10px;
+    margin-top: 5px;
+    padding: 5px; }
+
+/* illustraotr */
+.container-AI {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "aiHead" "AiMain" "asideAi" "placeList";
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
+  -ms-grid-rows: 100px 1fr 100px 2fr;
+  grid-template-rows: 100px 1fr 100px 2fr; }
+
+.AIheader {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: aiHead; }
+  .AIheader .AIheader__mainButtons {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 0; }
+    .AIheader .AIheader__mainButtons li {
+      margin-right: 10px; }
+
+.AIMain {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: AiMain; }
+  .AIMain .PSimageList {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 0; }
+
+.asideMenuAI {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: asideAi; }
+  .asideMenuAI .asideMenuAI__buttons {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 0; }
+    .asideMenuAI .asideMenuAI__buttons li {
+      margin-right: 10px; }
+
+.PlacedList {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: placeList; }
+  .PlacedList .PlacedList__images {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 0;
+    background: #305585;
+    padding: 10px; }
+    .PlacedList .PlacedList__images .PlacedList__images__documents {
+      padding: 10px;
+      background: #18273b;
+      box-shadow: 5px 5px 4px rgba(40, 48, 56, 0.6);
+      margin-right: 10px;
+      margin-top: 10px; }
+
+
+/*# sourceMappingURL=styleMin.css.map*/
