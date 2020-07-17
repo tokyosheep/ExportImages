@@ -111,7 +111,6 @@ function PSfunc(obj){
         if(this.isResize){
             this.resize();
         }
-        $.writeln(this.arg.folder);
         var process = new Main_process(this.arg.op,this.arg.more,this.arg.ext,this.arg.moreExt,this.arg.folder);
         var flag = process.saveFiles();
         return true;
