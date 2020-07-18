@@ -42,6 +42,8 @@
         width: 130px;
         height: 20px;
         padding: 5px 10px;
+        padding-top: 7px;
+        vertical-align: middle;
         border: 1px solid #fff;
         @include formDisplay();
     }
@@ -82,7 +84,7 @@
 }
 
 .stdButton{
-    width: 130px;
+    width: 160px;
     height: 20px;
     background: linear-gradient(rgba(0, 20, 255,1),rgba(0, 20, 255,0));
     color: white;

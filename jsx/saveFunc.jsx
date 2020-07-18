@@ -9,8 +9,6 @@ var GetFolderPath = function(moreOptions,folder){
 GetFolderPath.prototype.getpath = function(){
     //---------------別名保存用のパス------------------
     //====拡張子抜き出し=====
-    $.writeln(this.folder);
-    $.writeln("this.folder");
    var fPath = this.export ? this.folder : activeDocument.path;
    
    var fname = activeDocument.name//ドキュメントの名前を読み込み
@@ -52,7 +50,6 @@ GetFolderPath.prototype.getpath = function(){
     }  
        
    this.fPath = fPath;
-   $.writeln(fPath);
    this.chr = chr;
    this.filenum = filenum
    this.docName = docName;
@@ -143,7 +140,6 @@ Main_process.prototype.jpeg = function(){
 }/*=====jpeg=======*/
 Main_process.prototype.tiff = function(){
     var  fileObj = new File(this.getPath.makePath("tiff"));
-    $.writeln(fileObj);
     tiffOpt = new TiffSaveOptions();
     tiffOpt.alphaChannels = false;
     tiffOpt.annotations = true;

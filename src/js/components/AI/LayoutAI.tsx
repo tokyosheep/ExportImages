@@ -21,9 +21,9 @@ const LayoutAI = (prop) =>{
     return(
         <div className="container-AI">
             <HeaderMainButtons />
-            <AsideMenu />
+            {/*<AsideMenu />*/}
             <AIMain />
-            <PlacedList />
+            {/*<PlacedList />*/}
         </div>
     )
 }

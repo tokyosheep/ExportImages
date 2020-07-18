@@ -72,6 +72,17 @@ export type MODE = "normal" | "compact" | "preset";
 export type MODEAction = {type:string,arg:{mode:MODE}};
 const initMode = "normal";
 
+export const LoadingState = (state = false,action:{type:"on"|"off"}) =>{
+    switch(action.type){
+        case"off":
+            return false;
+        case"on":
+            return true;
+        default:
+            return state;
+    }
+}
+
 export const PSModeReduce = (state = initMode,action:MODEAction) =>{
     switch(action.type){
         case "SETMODE":

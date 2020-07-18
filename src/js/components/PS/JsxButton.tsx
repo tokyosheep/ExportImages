@@ -10,11 +10,18 @@ import bs from "../../fileSystem/basicSystem";
 const JsxButton = (prop) =>{
     const JSXprocess = async() =>{
         if(!validateProp(prop.state.PSReducer))return;
-        const send = new SendHostScript("PSfunc");
-        await bs.writeFile(extensionRoot+"data.json",prop.state.PSReducer);
-        console.log(prop.state.PSReducer);
-        const flag = await send.callHostScript({prop:prop.state.PSReducer,func:"saveProcess"});
-        console.log(flag);
+        prop.set_On();
+        try{
+            const send = new SendHostScript("PSfunc");
+            await bs.writeFile(extensionRoot+"data.json",prop.state.PSReducer);
+            console.log(prop.state.PSReducer);
+            const flag = await send.callHostScript({prop:prop.state.PSReducer,func:"saveProcess"});
+            console.log(flag);
+        }catch(e){
+            alert(e);
+        }finally{
+            prop.set_Off();
+        }
     }
     return(
         <LargeButton name="done" func={JSXprocess}/>

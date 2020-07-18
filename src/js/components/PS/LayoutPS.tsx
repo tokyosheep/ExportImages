@@ -10,6 +10,7 @@ import AsideOptions from "./asideOptions";
 import FooterMainButton from "./footer";
 import CompactMode from "./compactMode/compactMain";
 import PresetMode from "./presetMode/presetMode";
+import Loading from "./loading";
 
 import Prests from "./Presets";
 import {PSReceive} from "../../connection/PScommunicate";
@@ -54,6 +55,7 @@ const LayoutPS = (prop):React.ReactElement =>{
     },[])
     return(
         <div className="container-PS">
+            <Loading />
             {htmlElemnts}
         </div>
     )

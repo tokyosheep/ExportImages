@@ -23,7 +23,7 @@ const FooterMainButton = (prop) =>{
         <footer className="footer mainButtonForm">
             <ul>
                 <li>
-                    <LargeButton name="send to Illustrator images" func={sendToIllustrator}/>
+                    <LargeButton name="send to Illustrator" func={sendToIllustrator}/>
                 </li>
                 <li>
                     <JsxButton />

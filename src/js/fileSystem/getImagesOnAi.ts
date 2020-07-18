@@ -28,8 +28,13 @@ export const shifImages = async(PSImages:ImageList,AIImages:PlacedImages) =>{
     console.log("newItems");
     console.log(newImg);
     console.log(AIChecked);
-    fs.writeFileSync(`${extensionRoot}data.json`,JSON.stringify({PSImage:newImg,AIImages:AIChecked,func:"shiftImages"}));
+    //fs.writeFileSync(`${extensionRoot}data.json`,JSON.stringify({PSImage:newImg,AIImages:AIChecked,func:"shiftImages"}));//デバッグ用
     const flag = await send.callHostScript({PSImage:newImg,AIImages:AIChecked,func:"shiftImages"}).catch(e=> console.log(e));
     console.log(flag);
     return flag;
+}
+
+export const replaceSelected = async(img:string):Promise<void> =>{
+    const send = new SendHostScript("AIFunc");
+    const flag = await send.callHostScript({image:img,func:"replaceSlected"});
 }
