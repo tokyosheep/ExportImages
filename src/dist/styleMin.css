@@ -71,7 +71,7 @@
       color: #888; }
 
 .stdButton {
-  width: 130px;
+  width: 160px;
   height: 20px;
   background: linear-gradient(#0014ff, rgba(0, 20, 255, 0));
   color: white;
@@ -368,7 +368,7 @@ ul {
   grid-template-columns: 700px 300px;
   -ms-grid-rows: 150px 1fr 200px 200px;
   grid-template-rows: 150px 1fr 200px 200px;
-      grid-template-areas: "ps-header aside-options" "ps-main aside-options" "presets aside-options" "main-buttons aside-options"; }
+      grid-template-areas: "ps-header aside-options" "ps-main aside-options" "presets aside-options" "main-buttons aside-options"; }
 
 .PSheader {
   -ms-grid-row: 1;
@@ -501,7 +501,7 @@ ul {
 .container-AI {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: "aiHead" "AiMain" "asideAi" "placeList";
+      grid-template-areas: "aiHead" "AiMain" "asideAi" "placeList";
   -ms-grid-columns: 1fr;
   grid-template-columns: 1fr;
   -ms-grid-rows: 100px 1fr 100px 2fr;
