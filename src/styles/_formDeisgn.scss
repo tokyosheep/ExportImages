@@ -11,7 +11,7 @@
         background: rgba($r,$g,$b,0);
     }
     #{$input}:checked + #{$display}{
-        background: rgba($r,$g,$b,0.3);
+        background: rgba($r,$g,$b,0.5);
     }
 }
 

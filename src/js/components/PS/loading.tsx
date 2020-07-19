@@ -10,12 +10,20 @@ const Loading = (props) =>{
     const loadDisplay = {
         display: isLoad ? "block" : "none"
     }
-    const lis = Array(10).map((emp,index)=><li className="loading__bars__li" key={index}></li>);
     return(
         <div className="loading" style={loadDisplay}>
             <h3 className="loading__title" >loading...</h3>
             <ul className="loading__bars">
-                {lis}
+                <li className="loading__bars__li"></li>
+                <li className="loading__bars__li"></li>
+                <li className="loading__bars__li"></li>
+                <li className="loading__bars__li"></li>
+                <li className="loading__bars__li"></li>
+                <li className="loading__bars__li"></li>
+                <li className="loading__bars__li"></li>
+                <li className="loading__bars__li"></li>
+                <li className="loading__bars__li"></li>
+                <li className="loading__bars__li"></li>
             </ul>
         </div>
     )

@@ -81,7 +81,7 @@ ul{
     }
 }
 
-@for $i from 1 through 40{
+@for $i from 1 through 10{
     .loading__bars__li:nth-child(#{$i}){
         $sec: $i/5;
         animation-delay:#{$sec}s;

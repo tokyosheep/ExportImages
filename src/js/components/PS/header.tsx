@@ -31,7 +31,7 @@ const Header = (prop/*:{state:{PSReducer:InitPS}}*/) =>{
     });
     return(
         <header className="PSheader">
-            <h1 className="header-large">export image</h1>
+            <h1 className="header-large">Export images</h1>
             <div style={borderHead}></div>
             <ul className="PSheader__exts">
                 {boxes}

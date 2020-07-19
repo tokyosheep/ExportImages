@@ -2,6 +2,7 @@
 const mode = "development";
 //const nodeExternals = require("webpack-node-externals");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 const enabledSourceMap = mode === "development";
 const path = require("path");
 
@@ -10,6 +11,19 @@ module.exports = {
     // development に設定するとソースマップ有効でJSファイルが出力される
     mode: mode,
     devtool:"source-map",
+    optimization:{
+      minimizer:[
+          new TerserPlugin({
+              extractComments: "all",
+              sourceMap: true,
+              terserOptions:{
+                  compress:{
+                      drop_console:true,//production modeでconsole.log消えます
+                  }
+              }
+          }),
+      ],
+    },
     //externals:[nodeExternals()],
     target:"node",
     // メインとなるJavaScriptファイル（エントリーポイント）
