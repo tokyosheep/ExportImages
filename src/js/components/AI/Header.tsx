@@ -53,7 +53,7 @@ const HeaderMainButtons = (prop) =>{
 
     return(
         <header className="AIheader">
-            <h1 className="head-large">export images</h1>
+            <h1 className="head-large">Export images</h1>
             <ul className="AIheader__mainButtons">
                 <li>
                     <StdButton name="replace selected image" func={handleReplace}/>
