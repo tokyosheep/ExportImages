@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ExtensionManifest Version="9.0" ExtensionBundleId="com.export" ExtensionBundleVersion="1.0.0"
+<ExtensionManifest Version="7.0" ExtensionBundleId="com.export" ExtensionBundleVersion="2.2.0"
 		ExtensionBundleName="ExportImages" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<ExtensionList>
-		<Extension Id="com.export" Version="1.0.0" />
+		<Extension Id="com.export" Version="2.2.0" />
 	</ExtensionList>
 	<ExecutionEnvironment>
 		<HostList>
             
-             <!-- Uncomment tags according to the apps you want your panel to support 
+			<!-- Uncomment tags according to the apps you want your panel to support 
 			Make sure to change these tags to use realistic version ranges before releasing your extensions, not 99.9!
 			You may also need to change the CEP version in order to support certain apps. -->
             
             <!-- Photoshop -->
-            <Host Name="PHXS" Version="[16.0,99.9]" />
-            <Host Name="PHSP" Version="[16.0,99.9]" />
+            <Host Name="PHXS" Version="[18.0,99.9]" />
+            <Host Name="PHSP" Version="[18.0,99.9]" />
             
             <!-- Illustrator -->
             <Host Name="ILST" Version="[18.0,99.9]" />
@@ -21,7 +21,7 @@
             <!-- InDesign -->
             <!-- <Host Name="IDSN" Version="[10.0,99.9]" /> -->
             
-             <!-- InCopy -->
+            <!-- InCopy -->
             <!-- <Host Name="AICY" Version="[10.0,99.9]" /> -->  
             
             <!-- Premiere -->
@@ -47,7 +47,7 @@
 			<Locale Code="All" />
 		</LocaleList>
 		<RequiredRuntimeList>
-			<RequiredRuntime Name="CSXS" Version="9.0" />
+			<RequiredRuntime Name="CSXS" Version="7.0" />
 		</RequiredRuntimeList>
 	</ExecutionEnvironment>
 	<DispatchInfoList>
