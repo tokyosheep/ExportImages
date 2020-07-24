@@ -3,5 +3,5 @@
     if (folder){
         return decodeURI(folder.toString());
     }
-    return null;
+    return "";
 })();
