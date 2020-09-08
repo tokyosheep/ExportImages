@@ -8,7 +8,7 @@ export class SendPs implements Communication{
         this.app = app;
     }
     sendMsg(sendObj:object):void|boolean{
-        //if(!this.isAppRun()) return false;//通信先のアプリが立ち上がっていなかったら中断
+        if(!this.isAppRun()) return false;//通信先のアプリが立ち上がっていなかったら中断
         const extensionId = csInterface.getExtensionID(); 
         const vulcanNamespace = Vulcan.TYPE_PREFIX + extensionId;
         const msg = new Vulcan(vulcanNamespace);
@@ -17,7 +17,7 @@ export class SendPs implements Communication{
     }
     isAppRun(){
         if(!VulcanInt.isAppRunning(this.app)){
-            csInterface.evalScript(`alert("${this.app}が立ち上がっていません")`);
+            csInterface.evalScript(`alert("${this.app} hasn't started yet")`);
             return false;
         }
         return true;
