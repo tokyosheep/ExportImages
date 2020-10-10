@@ -1,6 +1,6 @@
 {
   "name": "ExportImages",
-  "version": "1.0.0",
+  "version": "2.3.0",
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
@@ -26,6 +26,7 @@
     "css-loader": "^3.6.0",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.14.1",
+    "postcss": "^8.1.1",
     "postcss-loader": "^3.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
