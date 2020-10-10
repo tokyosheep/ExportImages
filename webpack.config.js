@@ -1,6 +1,6 @@
 "use strict";
 const mode = "production";
-//const nodeExternals = require("webpack-node-externals");
+const nodeExternals = require("webpack-node-externals");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const enabledSourceMap = mode === "development";
@@ -24,7 +24,7 @@ module.exports = {
           }),
       ],
     },
-    //externals:[nodeExternals()],
+    externals:[nodeExternals()],
     target:"node",
     // メインとなるJavaScriptファイル（エントリーポイント）
     entry: "./src/js/main.tsx",
