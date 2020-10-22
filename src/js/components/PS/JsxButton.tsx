@@ -7,10 +7,19 @@ import {extensionRoot} from "../../fileSystem/init.js";
 import {validateProp} from "../../fileSystem/getPhotoshopImg";
 import {LargeButton} from "../parts/button";
 import bs from "../../fileSystem/basicSystem";
+
+const timeLag = () => {
+    return new Promise(resolve=>{
+        setTimeout(()=>{
+            resolve();
+        },100)
+    })
+};
 const JsxButton = (prop) =>{
     const JSXprocess = async() =>{
         if(!validateProp(prop.state.PSReducer))return;
         prop.set_On();
+        await timeLag();
         try{
             const send = new SendHostScript("PSfunc");
             //await bs.writeFile(extensionRoot+"data.json",prop.state.PSReducer);
